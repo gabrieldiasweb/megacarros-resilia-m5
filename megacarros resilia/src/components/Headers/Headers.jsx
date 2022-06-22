@@ -7,9 +7,9 @@ function Headers() {
     <div className={styles.container}> 
         <p> MEGA CARROS </p>
             <ul>
-                <li><Link to="/garagem">Home</Link></li>
+                <li><Link to="/">Home</Link></li>
                 <li><Link to="/garagem">Garagem</Link></li>
-                <li><Link to="/garagem">Sobre</Link></li>
+                <li><Link to="/sobre">Sobre</Link></li>
             </ul>
 
     </div>

@@ -20,7 +20,7 @@ function Garagem() {
     }
   }, []);
   return (
-    <div>
+    <div className={styles.container}>
       {dados.map((garagem, index) => {
         return (
               <Cards

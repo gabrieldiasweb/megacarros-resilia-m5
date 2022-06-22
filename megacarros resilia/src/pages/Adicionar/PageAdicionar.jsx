@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "../../components/Form/Form.jsx";
 import Botao from "../../components/Botao/Botao.jsx";
 import { api } from "../../Services/Api.js";
+import { ToastContainer, toast } from "react-toastify";
 
 function PageAdicionar() {
   const [item, setItem] = useState({
@@ -13,7 +14,7 @@ function PageAdicionar() {
   const [modelo, setModelo] = useState("Chevet Ret");
   const [preco, setPreco] = useState(100);
   const atualiza = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
       fetch(api, {
         method: "POST",
@@ -23,9 +24,16 @@ function PageAdicionar() {
         },
       })
         .then((res) => res.json())
-        .then((data) => console.log(data));
-    } catch (e) {
-      console.log(data.e);
+        .then((data) => {
+          console.log(data.message);
+          if (data.message == undefined) {
+            alert(data.erro);
+          } else {
+            alert(data.message);
+          }
+        });
+    } catch (error) {
+      alert("Deu erro");
     }
   };
   return (
@@ -33,22 +41,27 @@ function PageAdicionar() {
       <Form
         title={"Adicionar Novo Carro"}
         submit={(e) => atualiza(e)}
-        change1={(e) => setId(e.target.value)}
+        change1={(e) => {setId(e.target.value)
+          setItem({
+            id,
+            modelo,
+            preco,
+          })
+          console.log(id,item)
+        }}
         change2={(e) => setModelo(e.target.value)}
         change3={(e) => {
           setPreco(e.target.value);
           setItem({
             id,
             modelo,
-            preco
-          });
+            preco,
+          })
+          console.log(preco, item);
         }}
-        
+        texto={"Adicionar Carro"}
       />
-      <Botao
-      texto={"Adicionar Carro"}
-      click={(e) => atualiza(e)}
-      />
+     
     </div>
   );
 }

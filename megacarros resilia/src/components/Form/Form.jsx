@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Form.module.css'
+import Botao from '../../components/Botao/Botao.jsx'
 
 
 function Form(props) {
@@ -12,13 +13,14 @@ function Form(props) {
                 <label htmlFor="">ID</label>
             </div>
             <div>
-                <input type="text" onChange={props.change2}/>
-                <label htmlFor="">Modelo</label>
+                <input type="text" onChange={props.change2} style={{display: props.display1}} />
+                <label htmlFor="" style={{display: props.display1}} >Modelo</label>
             </div>
             <div>
-                <input type="number" onChange={props.change3}/>
-                <label htmlFor="">Preço</label>
+                <input type="number" onChange={props.change3}style={{display: props.display1}} />
+                <label htmlFor=""style={{display: props.display1}} >Preço</label>
             </div>
+            <Botao texto={props.texto}/>
         </form>
     </div>
   )
