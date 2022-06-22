@@ -9,6 +9,7 @@
 ul{
     list-style-type: none;
     display: flex;
+    color: white;
 }
 li{
     padding:0 0.5rem;

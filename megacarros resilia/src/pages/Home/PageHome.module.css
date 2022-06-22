@@ -4,11 +4,21 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 41vw;
-    background-image: url(./img/home.jpg);
-    background-size: cover;
-    font-size: 40px;
+    height: 45vw;
 }
-.container h1 {
+.titulo {
+    display: flex;
     color: white;
+    position: absolute;
+    font-size: 100px;
+}
+.btn{
+    position: absolute;
+    padding-top: 180px;
+}
+
+.imagemHome{
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
